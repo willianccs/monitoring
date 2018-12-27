@@ -40,6 +40,15 @@ EVENT general .* "General event" Normal
 FORMAT ZBXTRAP $aA $ar
 ```
 
+* Start services
+```
+systemctl enable snmptt
+systemctl start snmptt
+systemctl enable snmptrapd
+systemctl start snmptrapd
+```
+
+
 * Test
 ```
 snmptrap -v 1 -c public 127.0.0.1 '.1.3.6.1.6.3.1.1.5.3' '0.0.0.0' 6 33 '55' .1.3.6.1.6.3.1.1.5.3 s "teststring000"
