@@ -53,3 +53,12 @@ systemctl start snmptrapd
 ```
 snmptrap -v 1 -c public 127.0.0.1 '.1.3.6.1.6.3.1.1.5.3' '0.0.0.0' 6 33 '55' .1.3.6.1.6.3.1.1.5.3 s "teststring000"
 ```
+
+
+### Zabbix server confs
+
+Edit lines and restart service "zabbix-server":  
+```
+SNMPTrapperFile=/tmp/zabbix_traps.tmp
+StartSNMPTrapper=1
+```
